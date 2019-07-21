@@ -11,4 +11,18 @@
 
 .textFont{
   font-family: "Goudy Bookletter 1911", sans-serif;
+  font-weight: bold
 }
+
+.mBottom{
+  margin-bottom: 3em
+  }
+  
+  .ctext{
+    margin:0;
+    padding-left: 9em
+  }
+  
+  img{
+    margin-left: 1em
+  }

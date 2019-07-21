@@ -27,14 +27,18 @@ class App extends React.Component {
   
   
 
-
+  //call to api
   async componentDidMount() {
     const url = 'https://api.coinlore.com/api/global/'
-    const url2 = 'https://swapi.co/api/people/'
+    const url2 = 'https://api.kanye.rest'
     const url3 = 'https://dog.ceo/api/breeds/image/random'
+
+    //url response
     const response = await fetch(url)
     const resp = await fetch(url2)
     const res = await fetch(url3)
+
+    //return json
     const data = await response.json()
     const da = await res.json()
     const d = await resp.json()
@@ -43,23 +47,25 @@ class App extends React.Component {
     
     }
   renderData() {
-    console.log(this.state.da)
+    
     // if loading return loading h2
     if (this.state.loading) {
       return <h2>loading...</h2>
     }
     
     // if loaded return data
-    return <table>
-            <tbody>
-             <tr>
-             <th className='textFont'>Today's Etherium Price: { this.state.data[0].eth_d } |</th>
-             <th className='textFont'>Today's Star Wars Character: { this.state.d.results[1].name } |</th>
-             <th className='textFont'>Today's Puppy: <img className='resize' roundedCircle src={ this.state.da.message }  alt="dog"  /></th>
-              
-             </tr> 
-             </tbody> 
-          </table>
+    return <div>
+    <Container>
+      <Row>
+        <Col className='textFont'>Today's Etherium Price: { this.state.data[0].eth_d } </Col>
+        <Col className='textFont ctext'>Today's Puppy: <br />
+        <img className='resize' src={ this.state.da.message }  alt="dog"
+        /></Col>
+        <Col className='textFont'>Today's Kanye Quote: "{ this.state.d.quote }" </Col>
+      
+     </Row>
+   </Container>
+ </div>
               
                
            
@@ -88,7 +94,7 @@ class App extends React.Component {
         </Jumbotron>
 
         {this.renderData()}
-
+        
         <BrowserRouter>
           <div>
             
