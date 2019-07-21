@@ -98,7 +98,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             
-               <span><Link to="/Home">Home |</Link>{' '}</span> 
+              <span><Link to="/Home">Home |</Link>{' '}</span>
              
               <span><Link to="/About">About |</Link>{' '} </span>
               
@@ -107,7 +107,7 @@ class App extends React.Component {
                 <span><Link to="/blog">Blog </Link></span>
               
          
-            <Route path ='/home' component ={ Home }/>
+            <Route exact path ='/' component ={ Home }/>
             <Route path ='/about' component ={ About }/>
             <Route path ='/contact' component ={ Contact }/>
             <Route path ='/blog' component ={ Blog }/>
