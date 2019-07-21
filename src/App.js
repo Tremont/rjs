@@ -30,20 +30,20 @@ class App extends React.Component {
 
   async componentDidMount() {
     const url = 'https://api.coinlore.com/api/global/'
-    const url2 = 'https://dog.ceo/api/breeds/image/random'
-    //const url3 = 'https://dog.ceo/api/breeds/image/random'
+    const url2 = 'https://swapi.co/api/people/'
+    const url3 = 'https://dog.ceo/api/breeds/image/random'
     const response = await fetch(url)
     const resp = await fetch(url2)
-    //const res = await fetch(url3, {mode: 'no-cors'})
+    const res = await fetch(url3)
     const data = await response.json()
-    //const da = res.json()
+    const da = await res.json()
     const d = await resp.json()
     
-    this.setState({ data: data, d:d,  loading: false })
+    this.setState({ data: data, d:d, da:da, loading: false })
     
     }
   renderData() {
-    console.log(this.state.d)
+    console.log(this.state.da)
     // if loading return loading h2
     if (this.state.loading) {
       return <h2>loading...</h2>
@@ -53,10 +53,9 @@ class App extends React.Component {
     return <table>
             <tbody>
              <tr>
-              <td className='textFont'>Today's Etherium Price: { this.state.data[0].eth_d } |</td>
-              <td className='textFont'>Today's BitCoin Price: { this.state.data[0].btc_d } |</td>
-              <td className='textFont'>Today's Coins Count: { this.state.data[0].coins_count } |</td>
-              <td className='textFont'>Total Volume: { this.state.data[0].total_volume }</td>
+             <th className='textFont'>Today's Etherium Price: { this.state.data[0].eth_d } |</th>
+             <th className='textFont'>Today's Star Wars Character: { this.state.d.results[1].name } |</th>
+             <th className='textFont'>Today's Puppy: <img className='resize' roundedCircle src={ this.state.da.message }  alt="dog"  /></th>
               
              </tr> 
              </tbody> 
@@ -81,7 +80,7 @@ class App extends React.Component {
          
           <Row>
 
-            <h1> <Col className='text'>My React Project</Col></h1>
+             <Col className='text text-center'><h1>My React Project</h1></Col>
 
           </Row>
 
