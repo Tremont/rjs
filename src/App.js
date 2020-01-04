@@ -10,7 +10,17 @@ import Blog from './Blog'
 import Contact from './Contact'
 import About from './About'
 
+var links = [
 
+  { endpoint: '/america' },
+
+  { endpoint: '/canada' },
+
+  { endpoint: '/norway' },
+
+  { endpoint: '/bahamas' }
+
+];
 
 
 
@@ -48,6 +58,8 @@ class App extends React.Component {
     }
   renderData() {
     
+
+    
     // if loading return loading h2
     if (this.state.loading) {
       return <h2>loading...</h2>
@@ -74,9 +86,11 @@ class App extends React.Component {
     
   render() {
     
-    
+    const listItems = links.map((link) =>
+
+        <li key={link.endpoint}>{link.endpoint}</li>
           
-      
+        );
 
     return (
       
@@ -115,7 +129,15 @@ class App extends React.Component {
           </div>  
 
         </BrowserRouter>
-        
+        <div className="navigation">
+
+        <ul>
+
+          {listItems}
+
+        </ul>
+
+      </div>
 
       
       </Container>
