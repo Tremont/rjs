@@ -11,6 +11,9 @@ class Home extends React.Component {
     You need to get yourself a better dictionary.
     When you do, look up ‘genocide’. You’ll find a little picture of me there,
     and the caption’ll read ‘Over my dead body’. Don’t you think she looks tired?
+    Yeah? Well I’m the Lord of Time. Blimey, trying to make an Ood laugh…
+    When you do, look up ‘genocide’. You’ll find a little picture of me there,
+    and the caption’ll read ‘Over my dead body’. Don’t you think she looks tired?
     Yeah? Well I’m the Lord of Time. Blimey, trying to make an Ood laugh…</h1>
   }
 }
